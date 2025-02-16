@@ -1,12 +1,13 @@
 "use server";
 
 import { auth } from "@/auth";
-import { SignInButton } from "./components/sign-in-button";
 import Link from "next/link";
+import { SignInButton } from "./components/sign-in-button";
 import { SignOutButton } from "./components/sign-out-button";
 
 export default async function Home() {
   const session = await auth();
+  console.log(session);
 
   if (session?.user) {
     return (

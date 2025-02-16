@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 import { auth } from "@/auth";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 const protectedRoutes = ["/user-info"];
 
@@ -12,6 +12,8 @@ export default async function middleware(request: NextRequest) {
   const isProtected = protectedRoutes.some((route) =>
     pathname.startsWith(route)
   );
+
+  console.log(isProtected);
 
   if (isProtected && !session) {
     return NextResponse.redirect(new URL("/api/auth/signin", request.url));
