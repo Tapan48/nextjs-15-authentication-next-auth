@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Chrome, Github } from "lucide-react";
+import { Github, Chrome } from "lucide-react";
 import { login } from "@/lib/actions/auth";
 
 export function SignInButton() {
