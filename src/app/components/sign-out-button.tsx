@@ -1,6 +1,12 @@
 "use client";
+
+import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/actions/auth";
 
-export const SignOutButton = () => {
-  return <button onClick={() => logout()}> Sign out</button>;
-};
+export function SignOutButton() {
+  return (
+    <Button onClick={() => logout()} variant="outline">
+      Sign out
+    </Button>
+  );
+}
